@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'hackaton.urls'
+ROOT_URLCONF = 'hackathon.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'hackaton.wsgi.application'
+WSGI_APPLICATION = 'hackathon.wsgi.application'
 
 
 # Database
