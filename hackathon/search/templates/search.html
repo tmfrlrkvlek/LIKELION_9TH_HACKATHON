@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
+{% block content %}
+    <form action="{% url 'search' %}" method="POST">
+        {% csrf_token %}
+        <select class="ver" name="ver" id="">
+            <option value=0 {% if ver is 0 %}selected{% endif %}>ISBN</option>
+            <option value=1 {% if ver is 1 %}selected{% endif %}>제목</option>
+            <option value=2 {% if ver is 2 %}selected{% endif %}>저자</option>
+        </select>
+        <input type="text" class="keyinput" name="key" value="{{key}}" placeholder="검색어를 입력하세요">
+        <button class="search" type="submit"></button>
+    </form>
+    <div class="main-content-registerBook">
+    {% if books %}
+        <div class="addbook-box">
+            <div class="msg">If you can't find the book you're looking for</div>
+            <div class="arrowimg"></div>
+            <input class="search addbook" type="button" value="ADD BOOK" onclick="addBook();">
+        </div>
+        {% for book in books %}
+        <div class="book">
+            <img class="book-img" src="{{book.imageUrl}}">
+            <div>
+                <p class="title">{{book.title}}</p>
+                <p class="author">{{book.author}}</p>
+                <div>
+                    <input class="search" type="button" value="ENTER Q&A ROOM" onclick="location.href='/qna/{{book.id}}'">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="addbook-box2">
+            <p class="msg1">The book you are looking for cannot be found.</p>
+            <p class="msg2">Register isbn to open a question room!</p>
+            <div class="addbook-inbox">
+                <p class="msg">If you can't find <br>
+                    the book you're <br>
+                    looking for, <br>
+                    Register for an <span>ISBN</span></p>
+                <div class="arrowimg"></div>
+                <input class="search" type="button" value="ADD BOOK" onclick="addBook();">
+            </div>
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}
+{% block scripts %}
+<script type='text/javascript'>
+    let addBook = function(){
+        let ver = document.getElementsByName('ver')[0].value;
+        let isbn = document.getElementsByName('key')[0].value;
+        if (ver == 0 && isbn != '') location.href = '/registerBook?isbn='+isbn;
+        else location.href = '/registerBook';
+    }
+</script>
+{% endblock %}

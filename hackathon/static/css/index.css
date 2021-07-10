@@ -1,0 +1,167 @@
+.container{
+  margin: 0 0;
+}
+
+h4 {
+  font-size: 70px;
+  color :black;
+  margin-left:150px;
+  line-height: 130px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 70px;
+  color :white;
+  margin-left:150px;
+  line-height: 130px;
+  font-weight: bold;
+}
+
+input, button, select {
+  border : none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.search2 {
+  /* margin-left: 600px; */
+  /* margin-top: 300px;
+   */
+  margin: auto;
+}
+
+
+select {
+  height: 54px;
+  width: 170px;
+  border-top: 1px solid #320D9C;
+  border-bottom: 1px solid #320D9C;
+  background-color: #320D9C;
+  border-radius: 13px 0 0 13px;
+  padding: 0 20px;
+  color: white;
+  padding: auto;
+}
+
+select:focus{
+  outline: none;
+}
+
+.ver {
+  margin: 1px 0;
+}
+
+.keyinput {
+  height: 50px;
+  width: 270px;
+  font-size: 15px;
+  font-weight: 500;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  position: relative;
+  left: -4px;
+  top: -2px;
+  padding-left: 10px;
+}
+
+.keyinput:focus{
+  outline: none;
+}
+
+.search {
+  height: 54px;
+  width: 60px;
+  position: relative;
+  left: -8px;
+  top: 14px;
+  border-radius: 0 13px 13px 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  padding: 5px;
+}
+
+button.search{
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMi4wMDUgNTEyLjAwNSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNNTA1Ljc0OSw0NzUuNTg3bC0xNDUuNi0xNDUuNmMyOC4yMDMtMzQuODM3LDQ1LjE4NC03OS4xMDQsNDUuMTg0LTEyNy4zMTdjMC0xMTEuNzQ0LTkwLjkyMy0yMDIuNjY3LTIwMi42NjctMjAyLjY2NyAgICBTMCw5MC45MjUsMCwyMDIuNjY5czkwLjkyMywyMDIuNjY3LDIwMi42NjcsMjAyLjY2N2M0OC4yMTMsMCw5Mi40OC0xNi45ODEsMTI3LjMxNy00NS4xODRsMTQ1LjYsMTQ1LjYgICAgYzQuMTYsNC4xNiw5LjYyMSw2LjI1MSwxNS4wODMsNi4yNTFzMTAuOTIzLTIuMDkxLDE1LjA4My02LjI1MUM1MTQuMDkxLDQ5Ny40MTEsNTE0LjA5MSw0ODMuOTI4LDUwNS43NDksNDc1LjU4N3ogICAgIE0yMDIuNjY3LDM2Mi42NjljLTg4LjIzNSwwLTE2MC03MS43NjUtMTYwLTE2MHM3MS43NjUtMTYwLDE2MC0xNjBzMTYwLDcxLjc2NSwxNjAsMTYwUzI5MC45MDEsMzYyLjY2OSwyMDIuNjY3LDM2Mi42Njl6IiBmaWxsPSIjMDAwMDAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==');
+  background-repeat : no-repeat;
+  background-size : 20px;
+  background-color: white;
+  background-position-y: center;
+  background-position-x: center;
+}
+
+.main-content {
+  position: relative;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.main-content-search {
+  position: relative;
+  height: 750px;
+  width: 100%;
+  display: flex;
+}
+
+.main-content-registerBook {
+  display: flex;
+  height: 100%;
+}
+.main-content-registerBook > div {
+  margin: auto 0;
+  margin-right: auto;
+}
+.main-content-registerBook > form {
+  height: 100%;
+  margin-left: auto;
+  display: flex;
+}
+
+.main-content-box {
+  position: relative;
+  background-color: black;
+  height: 750px;
+  width: 100%;
+}
+
+.main-content-box2 {
+  position: relative;
+  background-color: rgb(0,0,0,0);
+  height: 750px;
+  width: 100%;
+}
+
+.main-content-point {
+  display:flex;
+  height: 750px;
+}
+
+.main-content-point input, .main-content-registerBook > form > input {
+  background-color: #320D9C;
+  border-radius: 13px;
+  color: white;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  margin: auto 0;
+  margin-left: auto;
+  margin-right: 100px;
+}
+
+.h4-inline-block{
+  font-size: 70px;
+  color :black;
+  margin-left:150px;
+  line-height: 130px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.point-msg {
+  margin: auto 0;
+  margin-right: auto;
+}

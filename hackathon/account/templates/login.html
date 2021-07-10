@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+{% block content %}
+<div class="black-card"></div>
+<div class="account-wrap">
+    <h1>LOG IN</h1>
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        {% if error %}
+            <div class="error-text">{{error}}</div>
+        {% else %}
+            <div class="error-text">&nbsp;</div>
+        {% endif %}
+        <div class="account-box">
+            <input type="text" name="username" placeholder="Id">
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <input type="submit" class="button" value="로그인">
+        <a class="findid" href="">아이디 찾기</a>|<a class="findpw" href="">비밀번호 찾기</a>
+    </form>
+</div>
+{% endblock %}

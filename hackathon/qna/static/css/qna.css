@@ -1,0 +1,129 @@
+
+.book-info-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.book-info-wrap img {
+    height: 180px;
+    width: 100;
+}
+
+.book-info-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.book-info-content div {
+    margin: 0px 15px 25px;
+}
+
+.book-title {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.button-line {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button-line input {
+    background-color: #320D9C;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.filter {
+    border: #A9A9A9 solid 0.3px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    width: 500px;
+    height: 40px;
+}
+
+#triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid pink;
+}
+
+.filter select {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 80px;
+    padding: 10px;
+    padding-left: 17px;
+    background-color: #320D9C;
+    color: white;
+    font-weight: bold;
+}
+
+.filter .search {
+    border: none;
+    width: 300px;
+    background-color: white;
+    color: black;
+}
+
+.filter .search:focus{
+    outline: none;
+}
+
+button {
+    background-color: #C4C4C4;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 50px;
+    border: none;
+}
+
+button img {
+    max-width: 20px;
+    max-height: 25px;
+}
+
+.descr {
+    padding: 10px 0px;
+    font-size: 20px;
+    border-bottom: #A9A9A9 dashed 0.5px;
+}
+
+.qna-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.qna-item {
+    padding: 35px 0px;
+    border-bottom: dashed 0.5px #A9A9A9;
+}
+
+.qna-item a {
+    text-decoration: none;
+    color: #320D9C;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.qna-item span {
+    font-size: 10px;
+    color: rgb(104, 104, 104);
+}
+
+.qna-top {
+    margin-bottom: 15px;
+}

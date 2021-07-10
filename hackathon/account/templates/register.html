@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+<form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    <div class="black-card"></div>
+    <div class="account-wrap">
+        <h1>REGISTER</h1>
+        <div class="account-box">
+            {% if error %}
+                <div class="error-text">{{error}}</div>
+            {% endif %}
+            <input type="text" name="username" placeholder="Id">
+            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="passwordCheck" placeholder="Password Check">
+            <input type="int" name="nickname" placeholder="Nickname">
+            <input type="submit" class="button" value="SUBMIT">
+        </div>
+    </div>
+</form>
+{% endblock %}

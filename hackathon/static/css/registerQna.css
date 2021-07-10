@@ -1,0 +1,97 @@
+.container{
+    border: 2px solid black;
+}
+
+.title{
+    background-color: #320D9C;
+    border-radius: 5px;
+    width: 220px;
+    height: 40px;
+    color: white;
+    text-align: center;
+    margin: 15px auto;
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.book-title, .book-picture, .book-info__chapter, .book-info__page, .book-info__prob-num, .question-title, .submitBtn, .question-box{
+    display: flex;
+    margin: 30px 0;
+}
+.book-title{
+    margin-top: 60px;
+}
+
+.book-title > h4, .book-picture > h4, .book-info > div > h4, .question-title > h4, .question-box > h4{
+    text-align: right;
+    width: 80px;
+    margin: 10px 30px 0 40px;
+}
+
+.book-info > div > h5{
+    line-height: 40px;
+}
+
+.book-title > div, .book-picture > input, .book-info > div > input, .question-title > input {
+    height: 40px;
+    width: 65%;
+    min-width: 160px;
+    border: 2px solid black;
+    margin-right: auto;
+    text-align: center;
+    line-height: 40px;
+}
+
+.book-picture > input{
+    width: 60px;
+    border: none;
+}
+
+.form-wrap > span {
+    margin-left: 150px;
+    height: 20px;
+    color: darkgray;
+    font-size: 12px;
+}
+
+.book-info > div > input {
+    width: 20%;
+    min-width: 70px;
+    margin-right: 20px;
+}
+
+.book-info > span {
+    margin-left: 150px;
+    height: 20px;
+    color: darkgray;
+    font-size: 12px;
+}
+
+.book-info__prob-num {
+    margin-top: 10px;
+}
+
+.book-picture {
+    margin-top: 0;
+}
+
+.question-wrap > textarea {
+    border: 2px solid black;
+    margin-left: 150px;
+    min-width: 160px;
+    width:  61%;
+    padding: 2%;
+}
+
+.submitBtn > input {
+    height: 40px;
+    background-color: #320D9C;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    outline: none;
+    border: none;
+    margin-left: auto;
+    margin-right: calc(35% - 150px);
+}

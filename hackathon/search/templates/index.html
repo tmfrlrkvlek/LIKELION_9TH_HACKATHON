@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class ="main-content">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+        <title>hackathon</title>
+    </head>
+    <div class="main-content">
+        <div class="main-content-search">
+            <div class="search2">
+            <form action="{% url 'search' %}" method="POST">
+                {% csrf_token %}
+                <select class="ver" name="ver" id="">
+                    <option value=0 {% if ver is 0 %}selected{% endif %}>ISBN</option>
+                    <option value=1 {% if ver is 1 %}selected{% endif %}>제목</option>
+                    <option value=2 {% if ver is 2 %}selected{% endif %}>저자</option>
+                </select>
+                <input type="text" class="keyinput" name="key" value="{{key}}" placeholder="검색어를 입력하세요">
+                <button class="search" type="submit"></button>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="main-content-box">
+            <div class="main-content-registerBook">
+                <div class="msg">
+                    <h3>If you can't find</h3> 
+                    <h3>the book you're</h3> 
+                    <h3>looking for,</h3> 
+                    <h3>Register for an ISBN</h3>
+                </div>
+                <form action="{% url 'registerBook' %}">
+                    <input class="addbookbtn" type="submit" value="ADD BOOK" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="main-content-box2">
+            <div class="main-content-point"> 
+                <div class="point-msg">  
+                    <h4>Buy points</h4> 
+                    <div class='h4-inline-block'>for more accurate</div>
+                    <h4>solutions</h4>
+                </div>
+                <input type="submit" class="buy-btn" value="BUY POINT"/></div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

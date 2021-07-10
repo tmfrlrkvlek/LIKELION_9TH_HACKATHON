@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+{% endblock %}
+{% block content %}
+
+    <header class="book-info-wrap">
+        <img src="{{book.imageUrl}}" alt="">
+        <div class="book-info-content">
+            <div class="book-title">{{book.title}}</div>
+            <div>
+                <span>{{book.author}} </span>
+                <span>{{book.publisher}} </span>
+                <span>ISBN: {{book.isbn}} </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 질문 글 -->
+    <article class="question-wrap">
+        <div class="qna-header">
+            <img class="question-mark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ1NS40MzEgNDU1LjQzMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3R5bGU9IiIgZD0iTTQwNS40OTMsNDEyLjc2NGMtNjkuNjg5LDU2Ljg4OS0yODcuMjg5LDU2Ljg4OS0zNTUuNTU2LDBjLTY5LjY4OS01Ni44ODktNjIuNTc4LTMwMC4wODksMC0zNjQuMDg5ICBzMjkyLjk3OC02NCwzNTUuNTU2LDBTNDc1LjE4MiwzNTUuODc2LDQwNS40OTMsNDEyLjc2NHoiIGZpbGw9IiMzMjBkOWMiIGRhdGEtb3JpZ2luYWw9IiM1Y2E0ZGEiIGNsYXNzPSIiPjwvcGF0aD4KPHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBzdHlsZT0iIiBkPSJNMjI5LjEzOCwzMTMuMjA5Yy02Mi41NzgsNDkuNzc4LTEzMi4yNjcsNzUuMzc4LTE5Ny42ODksNzYuOCAgYy00OC4zNTYtODIuNDg5LTM4LjQtMjgzLjAyMiwxOC40ODktMzQxLjMzM2M1MS4yLTUyLjYyMiwyMTEuOTExLTYyLjU3OCwzMDQuMzU2LTI5Ljg2NyAgQzM3Ny4wNDksMTEyLjY3NiwzMzAuMTE2LDIzMi4xNDIsMjI5LjEzOCwzMTMuMjA5eiIgZmlsbD0iIzNjMTBiYSIgZGF0YS1vcmlnaW5hbD0iIzZkYWZlMCIgY2xhc3M9IiI+PC9wYXRoPgo8cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSIiIGQ9Ik0yNTkuMDA0LDI4Ni4xODdoLTYxLjE1NlYyNTYuMzJjMC0xMS4zNzgsMS40MjItMTkuOTExLDQuMjY3LTI0LjE3OCAgYzIuODQ0LTUuNjg5LDguNTMzLTEyLjgsMTguNDg5LTIyLjc1NmwyNy4wMjItMjguNDQ0YzQuMjY3LTQuMjY3LDUuNjg5LTExLjM3OCw1LjY4OS0xOC40ODljMC03LjExMS0xLjQyMi0xNC4yMjItNy4xMTEtMTguNDg5ICBjLTQuMjY3LTUuNjg5LTkuOTU2LTcuMTExLTE3LjA2Ny03LjExMWMtNy4xMTEsMC0xMi44LDIuODQ0LTE3LjA2Nyw4LjUzM2MtNC4yNjcsNS42ODktNy4xMTEsMTQuMjIyLTguNTMzLDI0LjE3OGgtNjQgIGMyLjg0NC0yNy4wMjIsMTIuOC00OC4zNTYsMjkuODY3LTYyLjU3OHMzNi45NzgtMjIuNzU2LDYyLjU3OC0yMi43NTZzNDUuNTExLDcuMTExLDYxLjE1NiwxOS45MTEgIGMxNS42NDQsMTQuMjIyLDI0LjE3OCwzMi43MTEsMjQuMTc4LDU2Ljg4OWMwLDExLjM3OC0xLjQyMiwxOC40ODktNC4yNjcsMjQuMTc4Yy0yLjg0NCw1LjY4OS00LjI2Nyw4LjUzMy01LjY4OSwxMS4zNzggIGMtMS40MjIsMi44NDQtNC4yNjcsNS42ODktNy4xMTEsOS45NTZjLTQuMjY3LDQuMjY3LTcuMTExLDcuMTExLTguNTMzLDguNTMzYy03LjExMSw3LjExMS0xMi44LDEyLjgtMTguNDg5LDE4LjQ4OSAgYy01LjY4OSw1LjY4OS05Ljk1Niw5Ljk1Ni0xMS4zNzgsMTQuMjIyYy0xLjQyMiw0LjI2Ny0yLjg0NCw4LjUzMy0yLjg0NCwxNS42NDRWMjg2LjE4N3ogTTE5My41ODIsMzM3LjM4NyAgYzAtMTkuOTExLDE1LjY0NC0zNS41NTYsMzUuNTU2LTM1LjU1NnMzNS41NTYsMTUuNjQ0LDM1LjU1NiwzNS41NTZzLTE1LjY0NCwzNS41NTYtMzUuNTU2LDM1LjU1NlMxOTMuNTgyLDM1Ny4yOTgsMTkzLjU4MiwzMzcuMzg3eiAgIiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjZmZmZmZmIiBjbGFzcz0iIj48L3BhdGg+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjwvZz48L3N2Zz4=" />
+            <h3 class="qna-title">{{qna.title}}</h3>
+        </div>
+        <div class="file-img">
+            {% for file in files %}
+            <img src="{{file.filename.url}}" alt="" height="300">
+            {% endfor %}
+        </div>
+        <div class="question-content">{{qna.content}}</div>
+        <div class="writer-wrap">
+            <span class="qna-writer">Writer: {{qna.writer.nickname}}</span>
+            <span class="qna-date">{{qna.pubdate | date:"Y-m-d"}}</span>
+        </div>
+    </article>
+    <!-- // 질문 글 -->
+    <!-- 책제목 > 챕터 > 쪽수 > 문제 번호 : {{book.title}} > Chapter{{qna.chapter}} > {{qna.page}}page {{qna.qnum}} -->
+
+    <!-- <article class="question-wrap">
+        <div class="qna-header">
+            <img class="question-mark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ1NS40MzEgNDU1LjQzMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3R5bGU9IiIgZD0iTTQwNS40OTMsNDEyLjc2NGMtNjkuNjg5LDU2Ljg4OS0yODcuMjg5LDU2Ljg4OS0zNTUuNTU2LDBjLTY5LjY4OS01Ni44ODktNjIuNTc4LTMwMC4wODksMC0zNjQuMDg5ICBzMjkyLjk3OC02NCwzNTUuNTU2LDBTNDc1LjE4MiwzNTUuODc2LDQwNS40OTMsNDEyLjc2NHoiIGZpbGw9IiMzMjBkOWMiIGRhdGEtb3JpZ2luYWw9IiM1Y2E0ZGEiIGNsYXNzPSIiPjwvcGF0aD4KPHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBzdHlsZT0iIiBkPSJNMjI5LjEzOCwzMTMuMjA5Yy02Mi41NzgsNDkuNzc4LTEzMi4yNjcsNzUuMzc4LTE5Ny42ODksNzYuOCAgYy00OC4zNTYtODIuNDg5LTM4LjQtMjgzLjAyMiwxOC40ODktMzQxLjMzM2M1MS4yLTUyLjYyMiwyMTEuOTExLTYyLjU3OCwzMDQuMzU2LTI5Ljg2NyAgQzM3Ny4wNDksMTEyLjY3NiwzMzAuMTE2LDIzMi4xNDIsMjI5LjEzOCwzMTMuMjA5eiIgZmlsbD0iIzNjMTBiYSIgZGF0YS1vcmlnaW5hbD0iIzZkYWZlMCIgY2xhc3M9IiI+PC9wYXRoPgo8cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSIiIGQ9Ik0yNTkuMDA0LDI4Ni4xODdoLTYxLjE1NlYyNTYuMzJjMC0xMS4zNzgsMS40MjItMTkuOTExLDQuMjY3LTI0LjE3OCAgYzIuODQ0LTUuNjg5LDguNTMzLTEyLjgsMTguNDg5LTIyLjc1NmwyNy4wMjItMjguNDQ0YzQuMjY3LTQuMjY3LDUuNjg5LTExLjM3OCw1LjY4OS0xOC40ODljMC03LjExMS0xLjQyMi0xNC4yMjItNy4xMTEtMTguNDg5ICBjLTQuMjY3LTUuNjg5LTkuOTU2LTcuMTExLTE3LjA2Ny03LjExMWMtNy4xMTEsMC0xMi44LDIuODQ0LTE3LjA2Nyw4LjUzM2MtNC4yNjcsNS42ODktNy4xMTEsMTQuMjIyLTguNTMzLDI0LjE3OGgtNjQgIGMyLjg0NC0yNy4wMjIsMTIuOC00OC4zNTYsMjkuODY3LTYyLjU3OHMzNi45NzgtMjIuNzU2LDYyLjU3OC0yMi43NTZzNDUuNTExLDcuMTExLDYxLjE1NiwxOS45MTEgIGMxNS42NDQsMTQuMjIyLDI0LjE3OCwzMi43MTEsMjQuMTc4LDU2Ljg4OWMwLDExLjM3OC0xLjQyMiwxOC40ODktNC4yNjcsMjQuMTc4Yy0yLjg0NCw1LjY4OS00LjI2Nyw4LjUzMy01LjY4OSwxMS4zNzggIGMtMS40MjIsMi44NDQtNC4yNjcsNS42ODktNy4xMTEsOS45NTZjLTQuMjY3LDQuMjY3LTcuMTExLDcuMTExLTguNTMzLDguNTMzYy03LjExMSw3LjExMS0xMi44LDEyLjgtMTguNDg5LDE4LjQ4OSAgYy01LjY4OSw1LjY4OS05Ljk1Niw5Ljk1Ni0xMS4zNzgsMTQuMjIyYy0xLjQyMiw0LjI2Ny0yLjg0NCw4LjUzMy0yLjg0NCwxNS42NDRWMjg2LjE4N3ogTTE5My41ODIsMzM3LjM4NyAgYzAtMTkuOTExLDE1LjY0NC0zNS41NTYsMzUuNTU2LTM1LjU1NnMzNS41NTYsMTUuNjQ0LDM1LjU1NiwzNS41NTZzLTE1LjY0NCwzNS41NTYtMzUuNTU2LDM1LjU1NlMxOTMuNTgyLDM1Ny4yOTgsMTkzLjU4MiwzMzcuMzg3eiAgIiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjZmZmZmZmIiBjbGFzcz0iIj48L3BhdGg+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjwvZz48L3N2Zz4=" />
+            <h3 class="qna-title">{{qna.title}}</h3>
+        </div>
+        <div class="file-img">
+            {% for file in files %}
+            <img src="{{file.filename.url}}" alt="" height="300">
+            {% endfor %}
+        </div>
+        <div class="question-content">{{qna.content}}</div>
+        <div class="writer-wrap">
+            <span class="qna-writer">Writer: {{qna.writer.nickname}}</span>
+            <span class="qna-date">{{qna.pubdate | date:"Y-m-d"}}</span>
+        </div>
+
+
+    </article> -->
+
+
+    <article class="reply-wrap">
+        <div class="item-wrap">
+            <!-- 큰 질문 -->
+            <div class="write-wrap">
+                <textarea id="comment"></textarea>
+                <button type="button" id="comment-btn">작성하기</button>
+            </div>
+            <!-- // 큰 질문 -->
+
+            <div class="comment-wrap">
+                {% for comment in comments%}
+                    <div class="big-big-comment">
+                        <h3>{{comment.writer.nickname}}님의 답변</h3>
+                        <div class="is-selected">
+                            {% if comment.selected %}
+                                <button class="select-btn" disabled>채택됨</button>
+                            {% else %}
+                                {{qna.writer.user.id}}
+                                {% if qna.selected %}
+                                    <button class="select-btn" disabled>채택안됨</button>
+                                {% elif qna.writer.user.id == request.user.id %}
+                                    <button class="select-btn" value="{{comment.id}}" onclick="location.href='{% url 'selected' comment.id%}'">채택안됨</button>
+                                {% else %}
+                                    <button class="select-btn" disabled>채택안됨</button>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        <div class="comment-wrap">
+                            <div class="comment-content">{{comment.content}}</div>
+                            <span class="comment-pubdate">{{comment.pubdate| date:"Y-m-d"}}</span>
+                        </div>
+                        <!-- 대댓글 -->
+                        <div class="small-comment">
+                            <div class="reply-section{{comment.id}}">
+                                {% for replylist, replies in replydict %}
+                                    {% if comment.id|stringformat:"i" == replylist %}
+                                        {% for reply in replies %}
+                                        <div class="reply-item">
+                                            <div>{{reply.writer.nickname}}</div>
+                                            <div>{{reply.content}}</div>
+                                            <span>{{reply.pubdate| date:"Y-m-d"}}</span>
+                                        </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <!-- // 대댓글 -->
+                        <div>
+                            <textarea id="reply{{comment.id}}"></textarea>
+                            <button type="button" class="reply-btn" value='{{comment.id}}'>작성하기</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </article>
+    
+{% endblock %}
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        const formatDate = (date)=>{
+            let formatted_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+            return formatted_date;
+        }
+        $("#comment-btn").on("click", function(){ 
+            let parm = {
+                'qna_id' : '{{qna.id}}',
+                'comment' : $('#comment').val(),
+                'parent' : 0
+            }
+            $.ajax({
+                url: '{% url 'comment' %}',
+                type: 'POST',
+                headers:{
+                    'X-CSRFToken' : '{{csrf_token}}'
+                },
+                data : JSON.stringify(parm),
+                success : function(data){
+                    html = `<div class="comment-item">작성자: ${data.writer}내용: ${data.content}작성일: ${formatDate(new Date(data.pubdate))} 채택안됨</div>`;
+                    $('.comment-section').append(html);
+                },
+                error : function(data){
+                    console.log('error');
+                }
+            });
+        }); 
+        $(".reply-btn").on("click", function(){ 
+            parent = $(this).val();
+            let parm = {
+                'qna_id' : '{{qna.id}}',
+                'comment' : $("#reply"+parent).val(),
+                'parent' : parent
+            }
+            console.log(parm);
+            $.ajax({
+                url: '{% url 'comment' %}',
+                type: 'POST',
+                headers:{
+                    'X-CSRFToken' : '{{csrf_token}}'
+                },
+                data : JSON.stringify(parm),
+                success : function(data){
+                    html = `<div class="reply-item">작성자: ${data.writer}내용: ${data.content}작성일: ${formatDate(new Date(data.pubdate))} 채택안됨</div>`;
+                    $('.reply-section'+parent).append(html);
+                    console.log(data);
+                },
+                error : function(data){
+                    console.log('error');
+                }
+            });
+        }); 
+    });
+</script>
+{% endblock %}

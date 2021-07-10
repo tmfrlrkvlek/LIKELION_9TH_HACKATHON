@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/registerBook.css' %}">
+{% endblock %}
+{% block content %}
+<div class="div-container">
+    <form action="{% url 'registerBook' %}" method="POST">
+        <div class="search-isbn-wrap">
+            <div class="search-form-wrap">
+                {% csrf_token %}
+                <div class='text-wrap'>
+                    <span class="register-text">REGISTER&nbsp</span>
+                    <span class="isbn-text">ISBN</span></div>
+                <div class="align-center">
+                    <div class="barcode-wrap">
+                        <img src="{% static 'image/barcode.png' %}" alt="barcode" class='barcode-img'>
+                        <div class='barcode-text-wrap'><span class="barcode-text">&nbspISBN&nbsp1234-5678</span></div>
+                    </div>
+                    <div class="submit-wrap">
+                        <div class='submit-text-wrap'>
+                            <div class="submit-big-text">ISBN</div>
+                            <div class="submit-small-text">{{error_msg}}</div>
+                        </div>
+                        <input class="submit-text"type="text" name="isbn" value="{{isbn}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="submit-btn-wrap">
+            <button class="submit-btn" type="submit">SUBMIT</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

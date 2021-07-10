@@ -9,3 +9,5 @@ class Profile(models.Model):
     user = OneToOneField(User, on_delete=models.CASCADE)
     point = IntegerField(default=0)
     nickname = CharField(max_length=45)
+    def __str__(self):
+        return self.user.username

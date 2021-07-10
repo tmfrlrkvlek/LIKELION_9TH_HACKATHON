@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/qna.css' %}">
+{% endblock %}
+{% block content %}
+    <header class="book-info-wrap">
+        <img src="{{book.imageUrl}}" alt="">
+        <div class="book-info-content">
+            <div class="book-title">{{book.title}}</div>
+            <div>
+                <span>{{book.author}} </span>
+                <span>{{book.publisher}} </span>
+                <span>ISBN: {{book.isbn}} </span>
+            </div>
+        </div>
+    </header>
+
+    <aside class="button-line">
+        <!-- 필터링 -->
+        <div class="filter">
+            <select name="chapter">
+                <div id="triangle-down"></div>
+                <option value="-1">전체</option>
+                {% for chapter in chapters %}
+                    <option value="{{chapter}}" {% if chapter == cur_chapter %}selected{% endif %}>Ch.{{chapter}}</option>
+                {% endfor %}
+            </select>
+            <input class="search" type="number" name="page" value="{{cur_page}}" placeholder="페이지를 입력하세요">
+            <button type="button" name="search"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMi4wMDUgNTEyLjAwNSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNNTA1Ljc0OSw0NzUuNTg3bC0xNDUuNi0xNDUuNmMyOC4yMDMtMzQuODM3LDQ1LjE4NC03OS4xMDQsNDUuMTg0LTEyNy4zMTdjMC0xMTEuNzQ0LTkwLjkyMy0yMDIuNjY3LTIwMi42NjctMjAyLjY2NyAgICBTMCw5MC45MjUsMCwyMDIuNjY5czkwLjkyMywyMDIuNjY3LDIwMi42NjcsMjAyLjY2N2M0OC4yMTMsMCw5Mi40OC0xNi45ODEsMTI3LjMxNy00NS4xODRsMTQ1LjYsMTQ1LjYgICAgYzQuMTYsNC4xNiw5LjYyMSw2LjI1MSwxNS4wODMsNi4yNTFzMTAuOTIzLTIuMDkxLDE1LjA4My02LjI1MUM1MTQuMDkxLDQ5Ny40MTEsNTE0LjA5MSw0ODMuOTI4LDUwNS43NDksNDc1LjU4N3ogICAgIE0yMDIuNjY3LDM2Mi42NjljLTg4LjIzNSwwLTE2MC03MS43NjUtMTYwLTE2MHM3MS43NjUtMTYwLDE2MC0xNjBzMTYwLDcxLjc2NSwxNjAsMTYwUzI5MC45MDEsMzYyLjY2OSwyMDIuNjY3LDM2Mi42Njl6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==" /></button>
+        </div>
+        <!-- // 필터링 -->
+        <!-- 질문추가 -->
+        <input type="button" value="질문 추가" onclick="location.href='/qna/registerqna/{{book.room.id}}'">
+        <!-- // 질문추가 -->
+    </aside>
+
+    <h3 class="descr">'{{book.title}}'에 대한 검색결과입니다.</h3>
+
+    <article class="qna-wrap">
+        {% for qna in qnas %}
+        <div class="qna-item" name="{{forloop.counter}}">
+            <div class="qna-top">
+                <a href="/qna/detail/{{qna.id}}">{{qna.qnum}}. {{qna.title}}</a>
+                <span>{{qna.pubdate}}</span>
+            </div>
+            <div>{{qna.content}}</div>
+        </div>
+        {% endfor %}
+    </article>
+
+    <script type="text/javascript">
+        let searchQna = function(){
+            let chapter = document.getElementsByName('chapter')[0].value;
+            let page = document.getElementsByName('page')[0].value;
+            let url = '/qna/{{book.id}}?';
+            if (chapter!='') url = url + 'chapter='+chapter;
+            if (chapter!='' && page!='') url = url + '&';
+            if (page!='') url = url + 'page='+page;
+            location.href = url;
+        }
+        document.getElementsByName('chapter')[0].addEventListener('change', searchQna);
+        document.getElementsByName('search')[0].addEventListener('click', searchQna);
+    </script>
+{% endblock %}
