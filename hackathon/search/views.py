@@ -29,7 +29,7 @@ def registerBook(request):
             return render(request, 'registerBook.html', {'error_msg' : "ISBN을 입력해주세요"})
         if Book.objects.filter(isbn__icontains = isbn).exists():
             return render(request, 'registerBook.html', {'error_msg' : "이미 존재하는 책은 등록할 수 없습니다."})
-        headers = {'Authorization': 'KakaoAK 7b6044d308dd4287b32f8d788b87f536'}
+        headers = {'Authorization': 'KakaoAK kakaoappkey'}
         response = requests.get("https://dapi.kakao.com/v3/search/book?target=isbn&query="+isbn, headers = headers)
         result = json.loads(response.text)['documents']
         if not len(result) :
